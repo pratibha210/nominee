@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import useStyles from "./Components/App.style";
+import Ballot from './Components/Ballot/Ballot';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
+const classes = useStyles();
+ 
+  // Feel free to remove the contents of the header tag to make more room for your code
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" className={classes.Appheader}>
+
+      <Router>
+        <Routes>
+          <Route path={'/'} element={<Ballot />} />
+
+        </Routes>
+      </Router>
     </div>
+
   );
 }
 
